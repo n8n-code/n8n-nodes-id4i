@@ -18,32 +18,32 @@ import { transferDescription } from './resources/transfer';
 import { whoIsDescription } from './resources/who-is';
 
 export class Id4i implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Id4i',
-		name: 'N8nDevId4i',
-		icon: { light: 'file:./id4i.svg', dark: 'file:./id4i.dark.svg' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'ID4i HTTP API',
-		defaults: { name: 'Id4i' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevId4iApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Id4i',
+                name: 'N8nDevId4i',
+                icon: { light: 'file:./id4i.svg', dark: 'file:./id4i.dark.svg' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'ID4i HTTP API',
+                defaults: { name: 'Id4i' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevId4iApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -155,6 +155,6 @@ export class Id4i implements INodeType {
 		...storageDescription,
 		...transferDescription,
 		...whoIsDescription
-		],
-	};
+                ],
+        };
 }
